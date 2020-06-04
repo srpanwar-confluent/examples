@@ -1,8 +1,39 @@
+group.id=connect-cluster
+
+key.converter=org.apache.kafka.connect.json.JsonConverter
+value.converter=org.apache.kafka.connect.json.JsonConverter
+
+key.converter.schemas.enable=true
+value.converter.schemas.enable=true
+
+offset.storage.topic=connect-offsets
+offset.storage.replication.factor=1
+#offset.storage.partitions=25
+
+config.storage.topic=connect-configs
+config.storage.replication.factor=1
+
+status.storage.topic=connect-status
+status.storage.replication.factor=1
+#status.storage.partitions=5
+
+offset.flush.interval.ms=10000
+
+#rest.host.name=
+#rest.port=8083
+
+#rest.advertised.host.name=
+#rest.advertised.port=
+
+plugin.path=/usr/share/java,/Users/spanwar/Downloads/confluent/confluent-6.0.0-SNAPSHOT/share/confluent-hub-components
+
+
+
 bootstrap.servers=localhost:9092
 security.protocol=SASL_PLAINTEXT
 sasl.mechanism=OAUTHBEARER
 sasl.login.callback.handler.class=io.confluent.kafka.clients.plugins.auth.token.TokenUserLoginCallbackHandler
-sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required username="connect" password="connect1" metadataServerUrls="http://localhost:8090";
+sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required username="mds" password="mds1" metadataServerUrls="http://localhost:8090";
 
 ## Connector client (producer, consumer, admin client) properties ##
 
@@ -43,7 +74,7 @@ public.key.path=/tmp/tokenPublicKey.pem
 confluent.metadata.bootstrap.server.urls=http://localhost:8090
 
 # Credentials to use when communicating with the MDS; these should usually match the ones used for communicating with Kafka
-confluent.metadata.basic.auth.user.info=connect:connect1
+confluent.metadata.basic.auth.user.info=mds:mds1
 confluent.metadata.http.auth.credentials.provider=BASIC
 
 ## Secret Registry Secret Provider ##

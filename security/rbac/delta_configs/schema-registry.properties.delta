@@ -2,7 +2,7 @@ kafkastore.bootstrap.servers=localhost:9092
 kafkastore.security.protocol=SASL_PLAINTEXT
 kafkastore.sasl.mechanism=OAUTHBEARER
 kafkastore.sasl.login.callback.handler.class=io.confluent.kafka.clients.plugins.auth.token.TokenUserLoginCallbackHandler
-kafkastore.sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required username="sr" password="sr1" metadataServerUrls="http://localhost:8090";
+kafkastore.sasl.jaas.config=org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required username="mds" password="mds1" metadataServerUrls="http://localhost:8090";
 
 # Schema Registry group id, which is the cluster id
 schema.registry.group.id=schema-registry-demo
@@ -16,7 +16,7 @@ rest.servlet.initializor.classes=io.confluent.common.security.jetty.initializer.
 confluent.metadata.bootstrap.server.urls=http://localhost:8090
 
 # Credentials to use when communicating with the MDS; these should usually match the ones used for communicating with Kafka
-confluent.metadata.basic.auth.user.info=sr:sr1
+confluent.metadata.basic.auth.user.info=mds:mds1
 confluent.metadata.http.auth.credentials.provider=BASIC
 
 # The path to public keys that should be used to verify json web tokens during authentication

@@ -42,8 +42,8 @@ check_jq || exit 1
 ./enable-rbac-broker.sh
 ./enable-rbac-schema-registry.sh
 ./enable-rbac-connect.sh
-./enable-rbac-rest-proxy.sh
-./enable-rbac-ksql-server.sh
+#./enable-rbac-rest-proxy.sh
+#./enable-rbac-ksql-server.sh
 ./enable-rbac-control-center.sh
 
 #./cleanup.sh

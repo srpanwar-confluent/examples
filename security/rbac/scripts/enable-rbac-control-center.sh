@@ -39,8 +39,8 @@ echo -e "\n# Grant principal User:$USER_ADMIN_C3 the SystemAdmin role to the Kaf
 echo "confluent iam rolebinding create --principal User:$USER_ADMIN_C3 --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
 confluent iam rolebinding create --principal User:$USER_ADMIN_C3 --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
 
-echo -e "\n# Bring up Control Center"
-confluent local start control-center
+#echo -e "\n# Bring up Control Center"
+#confluent local start control-center
 
 echo "Sleeping 10 seconds"
 sleep 10
