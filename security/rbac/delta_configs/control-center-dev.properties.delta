@@ -1,3 +1,4 @@
+confluent.metadata.cluster.registry.enable=true
 confluent.controlcenter.rest.authentication.method=BEARER
 confluent.controlcenter.streams.security.protocol=SASL_PLAINTEXT
 public.key.path=/tmp/tokenPublicKey.pem
