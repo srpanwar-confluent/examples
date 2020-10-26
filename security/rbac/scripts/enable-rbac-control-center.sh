@@ -39,17 +39,17 @@ echo -e "\n# Grant principal User:$USER_ADMIN_C3 the SystemAdmin role to the Kaf
 echo "confluent iam rolebinding create --principal User:$USER_ADMIN_C3 --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
 confluent iam rolebinding create --principal User:$USER_ADMIN_C3 --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
 
-echo "confluent iam rolebinding create --principal User:$CLUSTER_ADMIN --role ClusterAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
-confluent iam rolebinding create --principal User:$CLUSTER_ADMIN --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
+echo "confluent iam rolebinding create --principal User:$USER_CLUSTER_ADMIN --role ClusterAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
+confluent iam rolebinding create --principal User:$USER_CLUSTER_ADMIN --role SystemAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
 
-echo "confluent iam rolebinding create --principal User:$USER_ADMIN --role UserAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
-confluent iam rolebinding create --principal User:$USER_ADMIN --role UserAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
+echo "confluent iam rolebinding create --principal User:$USER_USER_ADMIN --role UserAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
+confluent iam rolebinding create --principal User:$USER_USER_ADMIN --role UserAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
 
-echo "confluent iam rolebinding create --principal User:$OPERATOR --role Operator --kafka-cluster-id $KAFKA_CLUSTER_ID"
-confluent iam rolebinding create --principal User:$OPERATOR --role Operator --kafka-cluster-id $KAFKA_CLUSTER_ID
+echo "confluent iam rolebinding create --principal User:$USER_OPERATOR --role Operator --kafka-cluster-id $KAFKA_CLUSTER_ID"
+confluent iam rolebinding create --principal User:$USER_OPERATOR --role Operator --kafka-cluster-id $KAFKA_CLUSTER_ID
 
-echo "confluent iam rolebinding create --principal User:$SECURITY_ADMIN --role SecurityAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
-confluent iam rolebinding create --principal User:$SECURITY_ADMIN --role SecurityAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
+echo "confluent iam rolebinding create --principal User:$USER_SECURITY_ADMIN --role SecurityAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID"
+confluent iam rolebinding create --principal User:$USER_SECURITY_ADMIN --role SecurityAdmin --kafka-cluster-id $KAFKA_CLUSTER_ID
 
 confluent cluster register --cluster-name control.center.cr --kafka-cluster-id $KAFKA_CLUSTER_ID --hosts localhost:9092 --protocol SASL_PLAINTEXT
 
